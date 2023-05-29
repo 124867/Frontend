@@ -1,0 +1,368 @@
+
+.desktop1Child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  width: 1440px;
+  height: 60px;
+}
+.desktop1Item {
+  position: absolute;
+  top: 138px;
+  left: 334px;
+  width: 772px;
+  height: 165px;
+}
+.adopt {
+  color: #ffbd59;
+}
+.everyPetDeservesContainer {
+  position: absolute;
+  top: 125px;
+  left: 334px;
+  font-size: var(--font-size-21xl);
+  font-weight: 900;
+  display: inline-block;
+  width: 772px;
+}
+.desktop1Inner {
+  position: absolute;
+  top: 332px;
+  left: 334px;
+  width: 772px;
+  height: 118px;
+}
+.browseOurAvailableContainer {
+  position: absolute;
+  top: 231px;
+  left: 303px;
+  line-height: 24px;
+  color: var(--color-darkslategray-100);
+  display: inline-block;
+  width: 834px;
+}
+.rectangleDiv {
+  position: absolute;
+  top: 303px;
+  left: 415px;
+  width: 620px;
+  height: 118px;
+}
+.desktop1Child1,
+.desktop1Child2,
+.desktop1Child3,
+.rectangleIcon {
+  position: absolute;
+  top: 561px;
+  left: 44px;
+  width: 290px;
+  height: 213px;
+  object-fit: cover;
+}
+.desktop1Child1,
+.desktop1Child2,
+.desktop1Child3 {
+  left: 394px;
+}
+.desktop1Child2,
+.desktop1Child3 {
+  left: 744px;
+}
+.desktop1Child3 {
+  left: 1086px;
+}
+.desktop1Child4 {
+  position: absolute;
+  top: 514px;
+  left: -13px;
+  width: 1440px;
+  height: 25px;
+}
+.span {
+  font-size: var(--font-size-sm);
+  color: var(--color-darkslategray-100);
+}
+.cats37 {
+  position: absolute;
+  top: 514px;
+  left: 44px;
+  font-size: var(--font-size-lg);
+}
+/* .cats37 {
+  top: 868px;
+} */
+.desktop1Child5,
+.desktop1Child6 {
+  position: absolute;
+  top: 865px;
+  left: -13px;
+  width: 1440px;
+  height: 25px;
+}
+.desktop1Child6 {
+  top: 791px;
+  left: 44px;
+  width: 290px;
+}
+.huskies,
+.p {
+  margin: 0;
+}
+.p {
+  font-size: var(--font-size-sm);
+  color: var(--color-darkslategray-100);
+}
+.huskies15,
+.labradorRetriever20Container {
+  position: absolute;
+  top: 786px;
+  left: 44px;
+  text-align: left;
+}
+.labradorRetriever20Container {
+  left: 394px;
+}
+.bullDog2Container,
+.germanShepherd25Container {
+  position: absolute;
+  top: 786px;
+  left: 747px;
+  text-align: left;
+}
+.bullDog2Container {
+  left: 1087px;
+}
+.desktop1Child7,
+.desktop1Child8,
+.desktop1Child9 {
+  position: absolute;
+  top: 791px;
+  left: 1086px;
+  width: 290px;
+  height: 25px;
+}
+.desktop1Child8,
+.desktop1Child9 {
+  left: 744px;
+}
+.desktop1Child9 {
+  left: 394px;
+}
+.desktop1Child10,
+.desktop1Child11,
+.desktop1Child12,
+.desktop1Child13 {
+  position: absolute;
+  top: 912px;
+  left: 44px;
+  width: 290px;
+  height: 213px;
+  object-fit: cover;
+}
+.desktop1Child11,
+.desktop1Child12,
+.desktop1Child13 {
+  left: 1094px;
+}
+.desktop1Child12,
+.desktop1Child13 {
+  left: 744px;
+}
+.desktop1Child13 {
+  top: 917px;
+  left: 394px;
+}
+.t {
+  letter-spacing: 0.56em;
+}
+.pet {
+  position: absolute;
+  top: 8px;
+  left: 41px;
+}
+.untitledDesign11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.petParent {
+  position: relative;
+  width: 68px;
+  height: 32px;
+  text-align: left;
+  color: var(--color-black);
+}
+.aboutUs {
+  position: relative;
+  font-weight: 600;
+}
+.aboutUsParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+}
+.pets {
+  position: absolute;
+  top: 0;
+  left: 19px;
+  font-weight: 600;
+}
+.expandArrowIcon,
+.squaredMenuIcon {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  object-fit: cover;
+}
+.expandArrowIcon {
+  left: 54px;
+}
+.petsParent {
+  position: relative;
+  width: 68px;
+  height: 17px;
+}
+.flagIcon {
+  width: 17px;
+  height: 17px;
+  object-fit: cover;
+}
+.flagIcon,
+.signIn {
+  position: relative;
+}
+.groupContainer,
+.groupParent,
+.signInWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.signInWrapper {
+  border-radius: var(--br-6xs);
+  background-color: transparent;
+  border: 0.3px solid #cbcbcb;
+  padding: 7.5px 17px;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--color-black);
+}
+.groupContainer,
+.groupParent {
+  align-items: center;
+  gap: 34px;
+}
+.groupParent {
+  position: absolute;
+  top: 34px;
+  left: 44px;
+  gap: 282px;
+  font-size: var(--font-size-sm);
+  color: var(--color-darkslategray-100);
+}
+.parrot {
+  text-decoration: underline;
+}
+.frequentParrotHuskyContainer {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  line-height: 24px;
+}
+.groupChild {
+  position: absolute;
+  top: 0;
+  left: 172px;
+  background-color: #f8f8f8;
+  width: 325px;
+  height: 40px;
+}
+.searchDogs {
+  position: absolute;
+  top: 8px;
+  left: 182px;
+  line-height: 24px;
+  color: rgba(66, 66, 66, 0.36);
+}
+.searchIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.search {
+  position: relative;
+  line-height: 24px;
+}
+.dogSitParent,
+.searchParent,
+.uploadToTheCloudParent {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.searchParent {
+  left: 506px;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-black);
+  padding: var(--padding-5xs) 12px;
+  align-items: flex-start;
+  gap: 4px;
+  color: var(--color-white);
+}
+.dogSitParent,
+.uploadToTheCloudParent {
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  padding: var(--padding-6xs);
+  align-items: flex-end;
+  gap: 37px;
+}
+.uploadToTheCloudParent {
+  top: 5px;
+  left: 335px;
+  padding: 3px var(--padding-6xs);
+  align-items: center;
+  gap: 5px;
+}
+.rectangleParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 606px;
+  height: 40px;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+}
+.frequentParrotHuskyWhiteParent {
+  position: absolute;
+  top: 373px;
+  left: 417px;
+  width: 606px;
+  height: 70px;
+  text-align: left;
+  color: var(--color-darkslategray-100);
+}
+.desktop1 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

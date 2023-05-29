@@ -1,0 +1,156 @@
+.loginChild {
+  position: absolute;
+  top: 167px;
+  left: 427px;
+  border-radius: var(--br-9xs);
+  background-color: var(--color-white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 585px;
+  height: 690px;
+}
+.backToYour,
+.chooseOneOf {
+  position: absolute;
+  left: 507px;
+}
+.backToYour {
+  top: 252px;
+  font-size: 30px;
+  color: #292929;
+}
+.chooseOneOf {
+  top: 300px;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-ibm-plex-serif);
+  color: #545454;
+}
+.loginInner,
+.loginItem {
+  position: absolute;
+  top: 372px;
+  left: 507px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid #8ac0ff;
+  box-sizing: border-box;
+  width: 440px;
+  height: 69px;
+}
+.loginInner {
+  top: 457px;
+  border: 1px solid #e6e6e6;
+}
+.get {
+  font-weight: 500;
+}
+.span {
+  color: var(--color-dimgray-100);
+}
+.ziontutorialcom {
+  font-weight: 500;
+  color: var(--color-black);
+}
+.getziontutorialcom {
+  position: absolute;
+  top: 396px;
+  left: 543px;
+  color: #0c0c0c;
+}
+.password {
+  position: absolute;
+  top: 481px;
+  left: 543px;
+}
+.lineDiv,
+.orContinueWith {
+  position: absolute;
+  top: 573px;
+  left: 507px;
+}
+.lineDiv {
+  top: 581.75px;
+  left: 640.75px;
+  border-top: 0.5px solid #e7e7e7;
+  box-sizing: border-box;
+  width: 304.5px;
+  height: 0.5px;
+}
+.loginChild1,
+.loginChild2,
+.rectangleDiv {
+  position: absolute;
+  top: 628px;
+  left: 507px;
+  border-radius: var(--br-9xs);
+  background-color: var(--color-whitesmoke-200);
+  width: 131px;
+  height: 67px;
+}
+.loginChild1,
+.loginChild2 {
+  top: 624px;
+  left: 659px;
+  width: 136px;
+  height: 71px;
+}
+.loginChild2 {
+  left: 810px;
+  width: 137px;
+}
+.groupChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: #0366ff;
+  width: 312px;
+  height: 62px;
+}
+.logIn,
+.rectangleParent {
+  position: absolute;
+  top: 21px;
+  left: 133px;
+}
+.rectangleParent {
+  top: 742px;
+  left: 563px;
+  width: 312px;
+  height: 62px;
+  color: var(--color-white);
+  font-family: var(--font-ibm-plex-serif);
+}
+.n2Icon,
+.n2Icon1,
+.n3Icon {
+  position: absolute;
+  top: 637px;
+  left: 546px;
+  width: 46px;
+  height: 45px;
+  object-fit: cover;
+}
+.n2Icon1,
+.n3Icon {
+  top: 636px;
+  left: 855px;
+  width: 48px;
+  height: 48px;
+}
+.n2Icon1 {
+  top: 638px;
+  left: 698px;
+  width: 59px;
+  height: 44px;
+}
+.login {
+  position: relative;
+  background-color: #eef2f5;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-inter);
+}
