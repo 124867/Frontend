@@ -1,34 +1,46 @@
 import React, { useState } from "react";
 
 interface RegistrationData {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   password: string;
 }
 
 const RegisterPage: React.FC = () => {
   const [formData, setFormData] = useState<RegistrationData>({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    password: "",
+    password: ""
   });
 
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
+    console.log("Input changed:", name, value); // <-- add console log
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Submitted data:", formData);
-    // TODO: Add logic to submit data to server
+    try {
+      const response = await fetch('/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        console.log("Registration successful");
+      } else {
+        console.error("Registration failed");
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -36,22 +48,11 @@ const RegisterPage: React.FC = () => {
       <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          First Name:
+          Name:
           <input
             type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleInputChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Last Name:
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
+            name="name"
+            value={formData.name}
             onChange={handleInputChange}
             required
           />

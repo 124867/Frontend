@@ -83,12 +83,14 @@
   font-size: var(--font-size-sm);
   color: var(--color-darkslategray-100);
 }
-.cats37 {
+.container{
   position: absolute;
   top: 514px;
   left: 44px;
   font-size: var(--font-size-lg);
+  width: 100%;
 }
+
 /* .cats37 {
   top: 868px;
 } */

@@ -1,32 +1,37 @@
 [
   {
+    "id": 1,
     "name": "Fluffy",
     "type": "Persian",
     "age": 4,
-    "image": "../public/rectangle-10@2x.png"
+    "image": "/imgs/rectangle-10@2x.png"
   },
   {
+    "id": 2,
     "name": "Mittens",
     "type": "Siamese",
     "age": 2,
-    "image": "../public/rectangle-12@2x.png"
+    "image": "/imgs/rectangle-12@2x.png"
   },
   {
+    "id": 3,
     "name": "Socks",
     "type": "Tabby",
     "age": 7,
-    "image": "../public/rectangle-13@2x.png"
+    "image": "/imgs/rectangle-13@2x.png"
   },
   {
+    "id": 4,
     "name": "Whiskers",
     "type": "British Shorthair",
     "age": 5,
-    "image": "../public/rectangle-14@2x.png"
+    "image": "/imgs/rectangle-14@2x.png"
   },
   {
+    "id": 5,
     "name": "Boots",
     "type": "Maine Coon",
     "age": 9,
-    "image": "../public/rectangle-10@2x.png"
+    "image": "/imgs/rectangle-10@2x.png"
   }
 ]

@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from 'react';
 import './main.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-/* import Catlist from '../components/catlist'; */
+import { Store } from '../page/catlist';
 
 
 
@@ -25,59 +25,7 @@ const Desktop1: FunctionComponent = () => {
         </span>
       </div>
       <div className="rectangleDiv" />
-      {/* <Catlist /> */}
-
-
-      <div className="cats37">
-        <b>Cats </b>
-        <span className="span">37</span>
-      </div>
-      <div className="desktop1Child5" />
-      <div className="desktop1Child6" />
-      <div className="huskies15">
-        <p className="huskies">
-          <b>Huskies</b>
-        </p>
-        <p className="p">15</p>
-      </div>
-      <div className="labradorRetriever20Container">
-        <p className="huskies">
-          <b>Labrador Retriever</b>
-        </p>
-        <p className="p">20</p>
-      </div>
-      <div className="germanShepherd25Container">
-        <p className="huskies">
-          <b>German shepherd</b>
-        </p>
-        <p className="p">25</p>
-      </div>
-      <div className="bullDog2Container">
-        <p className="huskies">
-          <b>Bull Dog</b>
-        </p>
-        <p className="p">2</p>
-      </div>
-      <img
-        className="rectangleIcon"
-        alt=""
-        src="/rectangle-10@2x.png"
-      />
-      <img
-        className="desktop1Child1"
-        alt=""
-        src="/rectangle-12@2x.png"
-      />
-      <img
-        className="desktop1Child2"
-        alt=""
-        src="/rectangle-13@2x.png"
-      />
-      <img
-        className="desktop1Child3"
-        alt=""
-        src="/rectangle-14@2x.png"
-      />
+      <Store />
       <div className="groupParent">
         <div className="petParent">
           <b className="pet">
@@ -112,7 +60,7 @@ const Desktop1: FunctionComponent = () => {
             />
           </div>
           <img className="flagIcon" alt="" src="/flag@2x.png" />
-          <Link to="/signin">Sign in</Link>
+          <Link to="/login">Sign in</Link>
 
 
         </div>
