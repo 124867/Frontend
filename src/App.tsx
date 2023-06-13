@@ -2,7 +2,7 @@ import './App.css';
 
 import Main from './page/main';
 import Signin from './page/SignIn';
-import Image from './page/image';
+import { Image } from './page/image';
 import Register from './page/Register';
 import { Store } from './page/catlist';
 import { FavoritesProvider } from './context/FavoritesContext';

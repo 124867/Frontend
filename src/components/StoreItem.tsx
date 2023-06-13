@@ -2,14 +2,14 @@ import { Button, Card } from "react-bootstrap"
 import { useFavorites } from "../context/FavoritesContext"
 
 type StoreItemProps = {
-  id: number
+  _id: string
   name: string
-  type: string
+  breed: string
   age: number
   image: string
 }
 
-export function StoreItem({ id, name, type, age, image }: StoreItemProps) {
+export function StoreItem({ _id, name, breed, age, image }: StoreItemProps) {
   const { isFavorite, toggleFavorite } = useFavorites()
 
   return (
@@ -19,15 +19,15 @@ export function StoreItem({ id, name, type, age, image }: StoreItemProps) {
         <div className="d-flex justify-content-between align-items-center">
           <div>
             <h4 className="mb-0">{name}</h4>
-            <span className="text-muted">{type}</span>
+            <span className="text-muted">{breed}</span>
           </div>
           <Button
             className="mt-2"
-            onClick={() => toggleFavorite(id)}
-            variant={isFavorite(id) ? "warning" : "outline-warning"}
+            onClick={() => toggleFavorite(_id)}
+            variant={isFavorite(_id) ? "warning" : "outline-warning"}
             size="sm"
           >
-            {isFavorite(id) ? "Remove from Favorites" : "Add to Favorites"}
+            {isFavorite(_id) ? "Remove from Favorites" : "Add to Favorites"}
           </Button>
         </div>
         <hr />
