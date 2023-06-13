@@ -5,6 +5,7 @@ import styles from './Login.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api } from '../utilities/common_api';
+import jwt_decode from 'jwt-decode'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -19,7 +20,25 @@ const Login = () => {
         throw new Error('Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit');
       } */
       const response = await axios.post(`${api.uri}/user/login`, { email, password });
-      // Redirect to dashboard or home page  
+
+      if (response.status === 200 && response.data.token) {
+        const token = response.data.token;
+        localStorage.setItem('token', token);
+        const role = jwt_decode(token).role;
+
+        if (role === 'user') {
+          window.location.href = `/user-homepage?token=${token}`;
+        } else if (role === 'charity-worker') {
+          window.location.href = '/charity-worker-homepage';
+        } else {
+          console.error('Invalid user role:', role);
+          // Redirect to an error page or display an error message to the user
+        }
+      } else {
+        console.error('Authentication failed:', response.data.message);
+        // Display an error message to the user or redirect back to the login page
+      }
+
     } catch (err) {
       console.error(err);
       // Display error message to user

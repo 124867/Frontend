@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from 'react';
+import { FunctionComponent, useCallback, useState } from 'react';
 import './main.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Store } from '../page/catlist';
@@ -6,6 +6,8 @@ import { Store } from '../page/catlist';
 
 
 const Desktop1: FunctionComponent = () => {
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <div className="desktop1">
       <div className="desktop1Child" />
@@ -25,7 +27,7 @@ const Desktop1: FunctionComponent = () => {
         </span>
       </div>
       <div className="rectangleDiv" />
-      <Store />
+      <Store searchValue={searchValue} setSearchValue={setSearchValue} />
       <div className="groupParent">
         <div className="petParent">
           <b className="pet">
@@ -75,7 +77,15 @@ const Desktop1: FunctionComponent = () => {
         </div>
         <div className="rectangleParent">
           <div className="groupChild" />
-          <div className="searchDogs">Search Cat...</div>
+          <div className="searchDogs"><div className="searchCats">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search Cats"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </div></div>
           <div className="searchParent">
             <img className="searchIcon" alt="" src="/search@2x.png" />
             <b className="search">Search</b>

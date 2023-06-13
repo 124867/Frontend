@@ -5,6 +5,7 @@ import Signin from './page/SignIn';
 import { Image } from './page/image';
 import Register from './page/Register';
 import { Store } from './page/catlist';
+import User_main from './page/user-main';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
@@ -27,6 +28,7 @@ const App = () => {
             <Route element={<Image />} path="/Image_upload" />
             <Route element={<Register />} path="/register" />
             <Route element={<Store />} path="/catlist" />
+            <Route element={<User_main />} path='/user-homepage' />
           </Routes>
         </BrowserRouter>
       </div>
