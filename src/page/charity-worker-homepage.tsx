@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { api } from '../utilities/common_api';
 
 interface Cat {
@@ -9,14 +10,15 @@ interface Cat {
   image: string;
 }
 
-interface UserHomePageProps {
+interface WorkerHomepageProps {
   token: string;
 }
 
-const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
+const WorkerHomepage: React.FC<WorkerHomepageProps> = ({ token: propToken }) => {
   const catListRef = React.useRef<HTMLDivElement>(null);
   const searchParams = new URLSearchParams(window.location.search);
   const token = searchParams.get('token');
+
   useEffect(() => {
     // Fetch the cat list from the server and display it
     fetch(`${api.uri}/cats/list`)
@@ -41,6 +43,7 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
             const favBtn = document.createElement('button');
             favBtn.innerText = 'Add to Favorites';
             favBtn.addEventListener('click', () => {
+
 
               if (!token) {
                 console.error('Missing auth token');
@@ -110,10 +113,11 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
 
   return (
     <>
-      <h1>Welcome to the User Home Page</h1>
-      <p>You are logged in as a user.</p>
+      <h1>Welcome to the Worker Home Page</h1>
+      <p>You are logged in as a worker.</p>
       <p>Here, you can view and manage your account information, as well as access any features or services that are available to you.</p>
       <p>Thank you for using our application!</p>
+      <Link to={`/Image_upload${token ? `?token=${token}` : ''}`}><button>Add New Cat</button></Link>
       <div className="search-filter">
         <label htmlFor="search-input">Search:</label>
         <input type="text" id="search-input" onChange={searchCats} />
@@ -130,4 +134,4 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
   );
 };
 
-export default UserHomePage;
+export default WorkerHomepage;

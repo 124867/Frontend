@@ -88,7 +88,6 @@ const Desktop1: FunctionComponent = () => {
           </div></div>
           <div className="searchParent">
             <img className="searchIcon" alt="" src="/search@2x.png" />
-            <b className="search">Search</b>
           </div>
           <div className="dogSitParent">
             <img className="searchIcon" alt="" src="/dog-sit@2x.png" />

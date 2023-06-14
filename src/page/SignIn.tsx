@@ -28,8 +28,8 @@ const Login = () => {
 
         if (role === 'user') {
           window.location.href = `/user-homepage?token=${token}`;
-        } else if (role === 'charity-worker') {
-          window.location.href = '/charity-worker-homepage';
+        } else if (role === 'worker') {
+          window.location.href = `/charity-worker-homepage?token=${token}`;
         } else {
           console.error('Invalid user role:', role);
           // Redirect to an error page or display an error message to the user

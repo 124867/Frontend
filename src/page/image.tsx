@@ -15,9 +15,12 @@ export function Image() {
   const [age, setAge] = useState(0);
   const [breed, setBreed] = useState('');
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const searchParams = new URLSearchParams(window.location.search);
+  const token = searchParams.get('token');
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
 
     // Create a new FormData object and append the form data to it
     const formData = new FormData();
@@ -30,7 +33,7 @@ export function Image() {
 
     try {
       // Send a POST request to the server with the form data
-      const res = await fetch(`${api.uri}/cats/upload`, {
+      const res = await fetch(`${api.uri}/cats/upload?token=${token}`, {
         method: 'POST',
         body: formData,
       });
@@ -55,7 +58,7 @@ export function Image() {
 
   const handleDeleteClick = async (id: string) => {
     try {
-      const deleteUrl = `/cats/${id}`;
+      const deleteUrl = `${api.uri}/cats/${id}?token=${token}`;
       // Send a DELETE request to the server to delete the cat
       const res = await fetch(deleteUrl, { method: 'DELETE' });
       console.log('Cat deleted successfully');
@@ -83,7 +86,7 @@ export function Image() {
     }
 
     try {
-      const updateUrl = `/cats/${id}`;
+      const updateUrl = `${api.uri}/cats/${id}?token=${token}`;
       // Send a PUT request to the server with the updated cat data
       const res = await fetch(updateUrl, {
         method: 'PUT',
