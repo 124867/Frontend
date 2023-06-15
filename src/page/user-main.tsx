@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
 import { api } from '../utilities/common_api';
+import { Link } from 'react-router-dom';
+import { Button, Container, Row, Col } from 'react-bootstrap';
+import ReactDOM from "react-dom";
+
+import './user-main.css';
 
 interface Cat {
   _id: string;
@@ -17,6 +22,7 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
   const catListRef = React.useRef<HTMLDivElement>(null);
   const searchParams = new URLSearchParams(window.location.search);
   const token = searchParams.get('token');
+
   useEffect(() => {
     // Fetch the cat list from the server and display it
     fetch(`${api.uri}/cats/list`)
@@ -61,8 +67,18 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
                   console.error(err);
                 });
             });
-            div.appendChild(favBtn);
 
+            div.appendChild(favBtn);
+            const viewCommentsBtn = document.createElement('button');
+            viewCommentsBtn.innerText = 'View Comments';
+
+            viewCommentsBtn.addEventListener('click', () => {
+              // Navigate to the direct messages page for this cat
+              window.location.href = `/direct-messages/${cat._id}?token=${token}`;
+            });
+
+            // Append the View Comments button to the div
+            div.appendChild(viewCommentsBtn);
             catListRef.current.appendChild(div);
           }
         });
@@ -89,6 +105,11 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
       }
     });
   }
+  function logout() {
+    localStorage.removeItem('token');
+    window.location.reload();
+    window.location.href = '/';// optional: reload the page to reflect the logout state
+  }
 
   // Define the filterCats function
   function filterCats() {
@@ -110,10 +131,20 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
 
   return (
     <>
-      <h1>Welcome to the User Home Page</h1>
-      <p>You are logged in as a user.</p>
-      <p>Here, you can view and manage your account information, as well as access any features or services that are available to you.</p>
-      <p>Thank you for using our application!</p>
+      <Button onClick={logout} variant="primary">Logout</Button>
+      <Link to="/favorites">
+        <Button >
+          View Favorites
+        </Button>
+      </Link>
+      <Row>
+        <Col md={8}>
+          <h1>Welcome to the User Home Page</h1>
+          <p>You are logged in as a user.</p>
+          <p>Here, you can view and manage your account information, as well as access any features or services that are available to you.</p>
+          <p>Thank you for using our application!</p>
+        </Col>
+      </Row>
       <div className="search-filter">
         <label htmlFor="search-input">Search:</label>
         <input type="text" id="search-input" onChange={searchCats} />
@@ -125,7 +156,11 @@ const UserHomePage: React.FC<UserHomePageProps> = ({ token: propToken }) => {
           <option value="3">3 years</option>
         </select>
       </div>
-      <div ref={catListRef} id="cat-list" />
+      <Row>
+        <Col md={8}>
+          <div ref={catListRef} id="cat-list" className="mt-3" />
+        </Col>
+      </Row>
     </>
   );
 };

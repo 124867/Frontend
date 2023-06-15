@@ -1,4 +1,3 @@
-// SendDirectMessage.tsx
 import React, { useState } from 'react';
 import axios from 'axios';
 import { api } from '../utilities/common_api';
@@ -12,17 +11,28 @@ interface ICatData {
   name: string;
 }
 
-const SendDirectMessage = ({ cat }: { cat: ICatData }) => {
+interface ISendDirectMessageProps {
+  cat: ICatData;
+  onMessageSent: () => void; // Define a function to be called when the message is sent successfully
+}
+
+const SendDirectMessage = ({ cat, onMessageSent }: ISendDirectMessageProps) => {
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const messageData = { message };
-      await axios.post(`${api.uri}/user/send-direct-message/${cat._id}?token=${token}`, messageData);
+      if (!token) {
+        alert('You are not logged in. Please log in to send direct messages.');
+        window.location.href = '/login'; // Redirect the user to the login page
+        return;
+      }
+      const messageData: IMessageData = { message };
+      await axios.post(`${api.uri}/user/send-direct-message/${cat}?token=${token}`, messageData);
       alert('Direct message sent successfully');
       setMessage('');
+      onMessageSent(); // Call the onMessageSent function passed as props
     } catch (err) {
       console.error(err);
       alert('Error sending message');
@@ -30,6 +40,7 @@ const SendDirectMessage = ({ cat }: { cat: ICatData }) => {
   };
 
   return (
+    
     <form onSubmit={handleSubmit}>
       <h2>Send direct message to {cat.name}</h2>
       <textarea value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
@@ -39,4 +50,3 @@ const SendDirectMessage = ({ cat }: { cat: ICatData }) => {
 };
 
 export default SendDirectMessage;
-

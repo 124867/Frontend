@@ -1,0 +1,39 @@
+.favorites-container {
+  margin: 2rem;
+  text-align: center;
+}
+
+.favorites-title {
+  margin-bottom: 2rem;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.favorites-card {
+  padding: 1rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.favorites-card:hover {
+  transform: translateY(-1%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.favorites-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.favorites-card:hover img {
+  filter: brightness(80%);
+}

@@ -10,7 +10,7 @@ const Desktop1: FunctionComponent = () => {
 
   return (
     <div className="desktop1">
-      <div className="desktop1Child" />
+
       <div className="desktop1Item" />
       <div className="everyPetDeservesContainer">
         <span>Every Pet Deserves a Loving Home. </span>
@@ -28,45 +28,7 @@ const Desktop1: FunctionComponent = () => {
       </div>
       <div className="rectangleDiv" />
       <Store searchValue={searchValue} setSearchValue={setSearchValue} />
-      <div className="groupParent">
-        <div className="petParent">
-          <b className="pet">
-            PE
-            <span className="t">T</span>
-          </b>
-          <img
-            className="untitledDesign11"
-            alt=""
-            src="/untitled-design-1-1.svg"
-          />
-        </div>
-        <div className="aboutUsParent">
-          <div className="aboutUs">About us</div>
-          <div className="aboutUs">Adopt</div>
-          <div className="aboutUs">Contact us</div>
-          <div className="aboutUs">Blog</div>
-          <div className="aboutUs">Resources</div>
-        </div>
-        <div className="groupContainer">
-          <div className="petsParent">
-            <div className="pets">Pets</div>
-            <img
-              className="squaredMenuIcon"
-              alt=""
-              src="/squared-menu@2x.png"
-            />
-            <img
-              className="expandArrowIcon"
-              alt=""
-              src="/expand-arrow@2x.png"
-            />
-          </div>
-          <img className="flagIcon" alt="" src="/flag@2x.png" />
-          <Link to="/login">Sign in</Link>
 
-
-        </div>
-      </div>
       <div className="frequentParrotHuskyWhiteParent">
         <div className="frequentParrotHuskyContainer">
           Frequent:

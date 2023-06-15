@@ -1,0 +1,34 @@
+.store-item-container {
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.store-item-img {
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.store-item-details {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.store-item-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.store-item-subtitle {
+  color: #6c757d;
+}
+
+.store-item-divider {
+  margin-top: 1rem;
+}
+
+.store-item-age {
+  color: #6c757d;
+}

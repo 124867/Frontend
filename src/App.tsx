@@ -10,13 +10,16 @@ import WorkerHomepage from './page/charity-worker-homepage';
 import SendDirectMessage from './page/SendDirectMessage';
 import GetDirectMessagesForCat from './page/getDirectMessagesForCat';
 import { FavoritesProvider } from './context/FavoritesContext';
+import Favorites from './components/favoritelist';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Header } from './components/header';
 
 const App = () => {
   return (
     <FavoritesProvider>
       <div className="App">
         <BrowserRouter>
+          <Header />
           <Routes>
             <Route element={<Main />} path="" />
             {/* add a route for the registration form */}
@@ -26,8 +29,10 @@ const App = () => {
             <Route element={<Store />} path="/catlist" />
             <Route element={<UserHomePage />} path='/user-homepage' />
             <Route element={<WorkerHomepage />} path='/charity-worker-homepage' />
-            <Route element={<SendDirectMessage />} path='/send-direct-message/:catId'/>
-            <Route element={<GetDirectMessagesForCat />} path='/direct-messages/:catId'/>
+            <Route element={<SendDirectMessage />} path='/send-direct-message/:catId' />
+            <Route element={<GetDirectMessagesForCat />} path='/direct-messages/:catId' />
+            <Route element={<Favorites />} path='/favorites' />
+
           </Routes>
         </BrowserRouter>
       </div>

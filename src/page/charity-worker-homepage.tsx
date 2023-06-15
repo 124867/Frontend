@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../utilities/common_api';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 
 interface Cat {
   _id: string;
@@ -40,31 +41,16 @@ const WorkerHomepage: React.FC<WorkerHomepageProps> = ({ token: propToken }) => 
             div.appendChild(document.createTextNode(`${cat.name}, ${cat.age}, ${cat.breed}`));
 
             // Add a add to favorites button for each cat
-            const favBtn = document.createElement('button');
-            favBtn.innerText = 'Add to Favorites';
-            favBtn.addEventListener('click', () => {
+            const viewCommentsBtn = document.createElement('button');
+            viewCommentsBtn.innerText = 'View Comments';
 
-
-              if (!token) {
-                console.error('Missing auth token');
-                return; // or show an error message to the user
-              }
-              const addFavUrl = `${api.uri}/user/favorites/${cat._id}?token=${token}`;
-              fetch(addFavUrl, {
-                method: 'PUT',
-              })
-                .then((res) => {
-                  if (res.ok) {
-                    console.log('Cat added to favorites successfully');
-                  } else {
-                    throw new Error('Failed to add cat to favorites');
-                  }
-                })
-                .catch((err) => {
-                  console.error(err);
-                });
+            viewCommentsBtn.addEventListener('click', () => {
+              // Navigate to the direct messages page for this cat
+              window.location.href = `/direct-messages/${cat._id}?token=${token}`;
             });
-            div.appendChild(favBtn);
+
+            // Append the View Comments button to the div
+            div.appendChild(viewCommentsBtn);
 
             catListRef.current.appendChild(div);
           }
@@ -92,7 +78,11 @@ const WorkerHomepage: React.FC<WorkerHomepageProps> = ({ token: propToken }) => 
       }
     });
   }
-
+  function logout() {
+    localStorage.removeItem('token');
+    window.location.reload();
+    window.location.href = '/';// optional: reload the page to reflect the logout state
+  }
   // Define the filterCats function
   function filterCats() {
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
@@ -113,6 +103,7 @@ const WorkerHomepage: React.FC<WorkerHomepageProps> = ({ token: propToken }) => 
 
   return (
     <>
+      <Button onClick={logout} variant="primary">Logout</Button>
       <h1>Welcome to the Worker Home Page</h1>
       <p>You are logged in as a worker.</p>
       <p>Here, you can view and manage your account information, as well as access any features or services that are available to you.</p>

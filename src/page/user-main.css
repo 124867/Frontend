@@ -1,0 +1,25 @@
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search-filter label {
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.search-filter input,
+.search-filter select {
+  border: 1px solid #ced4da;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 40%;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}

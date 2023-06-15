@@ -1,0 +1,106 @@
+.groupParent {
+  position: absolute;
+  top: 34px;
+  left: 44px;
+  font-size: var(--font-size-sm);
+  color: var(--color-darkslategray-100);
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  z-index:999;
+}
+
+.petParent {
+  position: relative;
+  width: 68px;
+  height: 32px;
+  text-align: left;
+  color: var(--color-black);
+}
+
+.pet {
+  position: absolute;
+  top: 8px;
+  left: 41px;
+}
+
+.t {
+  letter-spacing: 0.56em;
+}
+
+.aboutUsParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+}
+
+.aboutUs {
+  font-weight: 600;
+}
+
+.petsParent {
+  position: relative;
+  width: 68px;
+  height: 17px;
+}
+
+.pets {
+  position: absolute;
+  top: 0;
+  left: 19px;
+  font-weight: 600;
+}
+
+.expandArrowIcon,
+.squaredMenuIcon {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.expandArrowIcon {
+  left: 54px;
+}
+
+.flagIcon {
+  width: 17px;
+  height: 17px;
+  object-fit: cover;
+}
+
+.signInLink {
+  margin-left: 10px;
+}
+
+.signInWrapper {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  border-radius: var(--br-6xs);
+  background-color: transparent;
+  border: 0.3px solid #cbcbcb;
+  padding: 7.5px 17px;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--color-black);
+}
+
+.signIn {
+  margin-left: 10px;
+}
+
+.desktop1 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
