@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { api } from "../utilities/common_api";
-
+import './image.css';
 interface Cat {
   _id: string;
   name: string;
@@ -15,6 +15,8 @@ export function Image() {
   const [age, setAge] = useState(0);
   const [breed, setBreed] = useState('');
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [inputValue, setInputValue] = useState('');
+  const [catImages, setCatImages] = useState([]);
   const searchParams = new URLSearchParams(window.location.search);
   const token = searchParams.get('token');
 
@@ -55,7 +57,27 @@ export function Image() {
       console.error(err);
     }
   };
+  const handleInput = (e) => {
+    setInputValue(e.target.value);
+  };
 
+  const handleClick = async () => {
+    try {
+      const response = await fetch(`${api.uri}/cats/cat-images/${inputValue.trim()}`);
+      const data = await response.json();
+      setCatImages(data.images);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const renderCatImage = (image) => {
+    return (
+      <div key={image.id}>
+        <img src={image.url} alt={`A ${inputValue} cat`} />
+      </div>
+    );
+  };
   const handleDeleteClick = async (id: string) => {
     try {
       const deleteUrl = `${api.uri}/cats/${id}?token=${token}`;
@@ -146,6 +168,15 @@ export function Image() {
           <br />
         </div>
       </form>
+      <div>
+        <input type="text" value={inputValue} onChange={handleInput} />
+        <button onClick={handleClick}>Search</button>
+        {catImages.length > 0 && (
+          <div>
+            {catImages.map(renderCatImage)}
+          </div>
+        )}
+      </div>
       <div id="catList">
         <h2>All Cats</h2>
         <ul>

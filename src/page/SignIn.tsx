@@ -7,18 +7,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import { api } from '../utilities/common_api';
 import jwt_decode from 'jwt-decode'
 
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
     try {
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (!/^[^\s@]+@[^\s@]+.[^\s@]+/.test(email)) {
         throw new Error('Invalid email format');
       }
-      /* if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password)) {
-        throw new Error('Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit');
-      } */
+      /* if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/.test(password)) {
+throw new Error('Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit');
+} */
       const response = await axios.post(`${api.uri}/user/login`, { email, password });
 
       if (response.status === 200 && response.data.token) {
@@ -50,6 +51,8 @@ const Login = () => {
     }
   };
 
+
+
   return (
     <div className={styles.login}>
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
@@ -80,13 +83,16 @@ const Login = () => {
       <div className={styles.orContinueWith}>Or continue with <Link to="/register" className={styles.registerLink}>Register</Link></div>
       <div className={styles.lineDiv} />
       <div className={styles.rectangleDiv} />
-      <div className={styles.loginChild1} />
+      {/* <button className={styles.loginChild1} onClick={handleLoginGoogle}>Sign in with Google</button> */}
+      <button className={styles.loginChild1}><a href={`${api.uri}/user/auth/google`}>        Sign in with Google</a>
+      </button>
+
       <div className={styles.loginChild2} />
       <div className={styles.rectangleParent}>
         <div className={styles.groupChild} />
         <button className={styles.logIn} onClick={handleLogin}>Log in</button>
       </div>
-    </div>
+    </div >
   );
 };
 

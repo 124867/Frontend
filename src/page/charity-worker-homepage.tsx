@@ -101,6 +101,7 @@ const WorkerHomepage: React.FC<WorkerHomepageProps> = ({ token: propToken }) => 
     });
   }
 
+
   return (
     <>
       <Button onClick={logout} variant="primary">Logout</Button>
