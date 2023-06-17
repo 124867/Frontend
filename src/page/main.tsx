@@ -2,7 +2,7 @@ import { FunctionComponent, useCallback, useState } from 'react';
 import './main.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Store } from '../page/catlist';
-
+import { Header } from '../components/header';
 
 
 const Desktop1: FunctionComponent = () => {
@@ -10,7 +10,7 @@ const Desktop1: FunctionComponent = () => {
 
   return (
     <div className="desktop1">
-
+      <Header />
       <div className="desktop1Item" />
       <div className="everyPetDeservesContainer">
         <span>Every Pet Deserves a Loving Home. </span>
